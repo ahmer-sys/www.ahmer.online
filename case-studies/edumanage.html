@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduManage Case Study - Ahmer Ali Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <div class="logo-circle">
+                <span>A</span>
+            </div>
+        </div>
+        <a href="../index.html" class="nav-back">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+    </nav>
+
+    <div class="case-study">
+        <header class="case-study-header">
+            <h1>EduManage</h1>
+            <p>Complete school management system with integrated learning platform</p>
+            <div class="tech-stack">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Socket.io</span>
+            </div>
+        </header>
+
+        <div class="case-study-content">
+            <section class="case-study-section">
+                <h2>Project Overview</h2>
+                <p>EduManage is a comprehensive school management system that streamlines administrative tasks, enhances communication between stakeholders, and facilitates effective learning management. The platform integrates traditional school management features with modern online learning capabilities.</p>
+                <p>The system serves as a central hub for administrators, teachers, students, and parents, providing tools for academic management, communication, and performance tracking.</p>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Academic Management</h3>
+                        <p>Complete management of classes, subjects, schedules, and curriculum planning. Includes automated attendance tracking and grade management system.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Online Learning Portal</h3>
+                        <p>Integrated virtual classroom environment with live sessions, assignment submission, and resource sharing capabilities.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Parent Communication</h3>
+                        <p>Real-time updates on student progress, attendance, and school activities. Direct messaging system between parents and teachers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Resource Management</h3>
+                        <p>Digital library system, inventory tracking for school resources, and facility scheduling management.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Technical Implementation</h2>
+                <div class="challenges-solutions">
+                    <div class="challenge-card">
+                        <h3>Challenge: System Integration</h3>
+                        <p>Required seamless integration of multiple modules while maintaining data consistency.</p>
+                        <div class="solution">
+                            <h4>Solution:</h4>
+                            <p>Implemented a microservices architecture with event-driven communication, ensuring loose coupling between modules while maintaining data integrity through MongoDB transactions.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Challenge: Real-time Communication</h3>
+                        <p>Needed efficient handling of real-time updates and notifications across the platform.</p>
+                        <div class="solution">
+                            <h4>Solution:</h4>
+                            <p>Utilized Socket.io for real-time bidirectional communication, implemented notification queuing system, and optimized payload size for better performance.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Challenge: Data Security</h3>
+                        <p>Required robust security measures for sensitive student and financial data.</p>
+                        <div class="solution">
+                            <h4>Solution:</h4>
+                            <p>Implemented role-based access control, end-to-end encryption for sensitive data, and comprehensive audit logging system for all critical operations.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Project Gallery</h2>
+                <div class="project-gallery">
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Dashboard" alt="Admin Dashboard">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Virtual+Classroom" alt="Virtual Classroom Interface">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Parent+Portal" alt="Parent Portal">
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Results & Impact</h2>
+                <p>EduManage has significantly improved educational institution operations:</p>
+                <ul>
+                    <li>70% reduction in administrative workload</li>
+                    <li>95% parent engagement rate through the communication portal</li>
+                    <li>40% improvement in resource utilization</li>
+                    <li>Successfully implemented in 50+ schools with 100,000+ users</li>
+                </ul>
+            </section>
+
+            <div class="case-study-nav">
+                <a href="realestate-pro.html" class="nav-link">
+                    <i class="fas fa-arrow-left"></i> Previous: RealEstate Pro
+                </a>
+                <a href="blood-donation-app.html" class="nav-link">
+                    Next: Blood Donation App <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/ahmer-ali-1a3226316" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 Ahmer Ali. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="../js/script.js"></script>
+</body>
+</html> 

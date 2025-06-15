@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant POS Case Study - Ahmer Ali Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-logo">Ahmer Ali</div>
+        <a href="../index.html" class="nav-back">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+    </nav>
+
+    <div class="case-study">
+        <header class="case-study-header">
+            <h1>Restaurant POS</h1>
+            <p>Modern point of sale system with integrated kitchen management</p>
+            <div class="tech-stack">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">Socket.io</span>
+                <span class="tech-tag">PostgreSQL</span>
+            </div>
+        </header>
+
+        <div class="case-study-content">
+            <section class="case-study-section">
+                <h2>Project Overview</h2>
+                <p>The Restaurant POS is a comprehensive point of sale solution designed specifically for modern restaurants. It combines traditional POS functionality with advanced features like real-time kitchen display systems, inventory tracking, and customer relationship management.</p>
+                <p>The system was developed to streamline restaurant operations while enhancing customer experience through faster service and personalized engagement.</p>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Table Management</h3>
+                        <p>Interactive table layout with real-time status updates, reservation management, and wait time predictions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Kitchen Display System</h3>
+                        <p>Real-time order tracking with smart routing, preparation timers, and automated alerts for efficient kitchen operations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Inventory Control</h3>
+                        <p>Automated inventory tracking with ingredient-level management, waste tracking, and predictive ordering suggestions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Customer Loyalty</h3>
+                        <p>Integrated loyalty program with personalized rewards, customer profiles, and targeted marketing campaigns.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Technical Implementation</h2>
+                <div class="challenges-solutions">
+                    <div class="challenge-card">
+                        <h3>Challenge: Real-time Operations</h3>
+                        <p>Required seamless real-time communication between front-of-house and kitchen staff.</p>
+                        <div class="solution">
+                            <h4>Solution:</h4>
+                            <p>Implemented Socket.io for real-time bidirectional communication. Created a robust event system for order updates, kitchen notifications, and table status changes.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Challenge: Offline Resilience</h3>
+                        <p>Needed to ensure system functionality during internet outages.</p>
+                        <div class="solution">
+                            <h4>Solution:</h4>
+                            <p>Developed a progressive web app with local storage capabilities. Implemented queue-based synchronization for offline transactions and automatic recovery procedures.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Challenge: Multi-branch Support</h3>
+                        <p>Required support for restaurants with multiple locations while maintaining data consistency.</p>
+                        <div class="solution">
+                            <h4>Solution:</h4>
+                            <p>Implemented a multi-tenant architecture with PostgreSQL schemas. Created centralized management system with branch-specific configurations and consolidated reporting.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Project Gallery</h2>
+                <div class="project-gallery">
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=POS+Interface" alt="POS Interface">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Kitchen+Display" alt="Kitchen Display System">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Analytics" alt="Analytics Dashboard">
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Results & Impact</h2>
+                <p>The Restaurant POS has delivered significant improvements for restaurant operations:</p>
+                <ul>
+                    <li>35% reduction in order processing time</li>
+                    <li>25% increase in table turnover rate</li>
+                    <li>40% reduction in food waste through better inventory management</li>
+                    <li>Successfully deployed in 200+ restaurant locations</li>
+                </ul>
+            </section>
+
+            <div class="case-study-nav">
+                <a href="hr-management-suite.html" class="nav-link">
+                    <i class="fas fa-arrow-left"></i> Previous: HR Management Suite
+                </a>
+                <a href="spices-hub.html" class="nav-link">
+                    Next: Spices Hub <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 Ahmer Ali. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="../js/script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Connect App Case Study - Ahmer Ali Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <div class="logo-circle">
+                <span>A</span>
+            </div>
+        </div>
+        <a href="../index.html" class="nav-back">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+    </nav>
+
+    <div class="case-study">
+        <header class="case-study-header">
+            <h1>Let's Connect</h1>
+            <p>Full-featured messaging platform with end-to-end encryption</p>
+            <div class="tech-stack">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">WebSocket</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">WebRTC</span>
+            </div>
+        </header>
+
+        <div class="case-study-content">
+            <section class="case-study-section">
+                <h2>Project Overview</h2>
+                <p>Let's Connect is a comprehensive messaging platform that provides secure communication channels for both personal and business users. The app features end-to-end encryption, real-time messaging, voice/video calls, and rich media sharing capabilities.</p>
+                <p>The platform was developed to offer a secure, feature-rich alternative to existing messaging apps, with a focus on privacy, performance, and user experience.</p>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Secure Messaging</h3>
+                        <p>End-to-end encrypted messaging with support for text, images, videos, and documents. Features message editing, deletion, and expiring messages.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Voice & Video Calls</h3>
+                        <p>High-quality voice and video calls using WebRTC, with support for group calls, screen sharing, and background blur.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Group Management</h3>
+                        <p>Advanced group features including roles, permissions, shared media library, and threaded conversations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Business Tools</h3>
+                        <p>Dedicated business features including customer service tools, automated responses, and analytics dashboard.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Technical Implementation</h2>
+                <div class="challenges-solutions">
+                    <div class="challenge-card">
+                        <h3>Challenge: Real-time Performance</h3>
+                        <p>Needed to handle thousands of concurrent connections while maintaining low latency.</p>
+                        <div class="solution">
+                            <h4>Solution:</h4>
+                            <p>Implemented a scalable WebSocket architecture using Node.js clusters and Redis pub/sub for real-time message delivery. Used MongoDB change streams for efficient data synchronization.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Challenge: Media Handling</h3>
+                        <p>Required efficient handling and storage of large media files while ensuring quick access.</p>
+                        <div class="solution">
+                            <h4>Solution:</h4>
+                            <p>Developed a custom media processing pipeline using FFmpeg for compression and thumbnails. Implemented progressive loading and caching strategies for optimal performance.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Challenge: Call Quality</h3>
+                        <p>Needed to ensure high-quality voice and video calls across different network conditions.</p>
+                        <div class="solution">
+                            <h4>Solution:</h4>
+                            <p>Implemented adaptive bitrate streaming and WebRTC optimization techniques. Used TURN servers for reliable connectivity and deployed a global network of media servers.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Project Gallery</h2>
+                <div class="project-gallery">
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Chat+Interface" alt="Chat Interface">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Video+Call" alt="Video Call Screen">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Business+Dashboard" alt="Business Dashboard">
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Results & Impact</h2>
+                <p>Let's Connect has achieved significant success in the messaging app market:</p>
+                <ul>
+                    <li>Over 1 million active users within first year</li>
+                    <li>4.7/5 average rating across app stores</li>
+                    <li>Successfully processing 10+ million messages daily</li>
+                    <li>2000+ business accounts actively using the platform</li>
+                </ul>
+            </section>
+
+            <div class="case-study-nav">
+                <a href="blood-donation-app.html" class="nav-link">
+                    <i class="fas fa-arrow-left"></i> Previous: Blood Donation App
+                </a>
+                <a href="inventory-pro.html" class="nav-link">
+                    Next: Inventory Pro <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 Ahmer Ali. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="../js/script.js"></script>
+</body>
+</html> 

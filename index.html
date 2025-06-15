@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ahmer Ali - Flutter and Web Developer Portfolio">
+    <title>Ahmer Ali - Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <div class="logo-circle">
+                <span>A</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="mobile-menu" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="assets/images/profile.jpg" alt="Ahmer Ali" class="profile-picture">
+                <div class="hero-image-bg"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="animate-text">Hi, I'm Ahmer Ali</h1>
+                <p class="animate-text">App & Web Developer</p>
+                <div class="hero-description">
+                    <p class="tech-specialties">
+                        <span><i class="fab fa-flutter"></i> Cross-Platform Apps</span>
+                        <span><i class="fas fa-globe"></i> Full-Stack Web</span>
+                        <span><i class="fas fa-mobile-alt"></i> Native Performance</span>
+                    </p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#portfolio" class="btn primary">View My Work</a>
+                    <a href="#contact" class="btn secondary">Contact Me</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image fade-in">
+                    <img src="assets/images/profile.jpg" alt="Ahmer Ali" class="profile-img">
+                </div>
+                <div class="about-text">
+                    <p>As a versatile Full-Stack Developer with expertise in Flutter, Web Development, and WordPress, I transform innovative ideas into powerful digital solutions. With a passion for creating seamless user experiences, I specialize in developing cross-platform mobile applications and responsive websites that make a lasting impact.</p>
+                    
+                    <p>My approach combines technical excellence with creative problem-solving, ensuring each project not only meets but exceeds client expectations. Whether it's building robust mobile apps with Flutter, crafting custom WordPress solutions, or developing modern web applications, I deliver results that drive business growth and user engagement.</p>
+
+                    <div class="tech-stack">
+                        <span class="tech-tag"><i class="fab fa-flutter"></i>Flutter</span>
+                        <span class="tech-tag"><i class="fas fa-code"></i>Dart</span>
+                        <span class="tech-tag"><i class="fab fa-wordpress"></i>WordPress</span>
+                        <span class="tech-tag"><i class="fab fa-html5"></i>HTML5</span>
+                        <span class="tech-tag"><i class="fab fa-css3-alt"></i>CSS3</span>
+                        <span class="tech-tag"><i class="fab fa-js"></i>JavaScript</span>
+                        <span class="tech-tag"><i class="fab fa-react"></i>React</span>
+                        <span class="tech-tag"><i class="fab fa-php"></i>PHP</span>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                    </div>
+                    <div class="key-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Cross-Platform Mobile Apps</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-globe"></i>
+                            <span>Custom WordPress Solutions</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-code"></i>
+                            <span>Clean & Efficient Code</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-rocket"></i>
+                            <span>Performance Optimization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">My Services</h2>
+            <p class="section-subtitle">Delivering Excellence in Digital Solutions</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile App Development</h3>
+                    <p>Creating powerful Flutter applications that work seamlessly across iOS and Android platforms. Focusing on intuitive UI/UX and optimal performance.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i>Cross-Platform Solutions</li>
+                        <li><i class="fas fa-check"></i>Custom UI/UX Design</li>
+                        <li><i class="fas fa-check"></i>API Integration</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Building responsive and dynamic websites using modern technologies. From simple landing pages to complex web applications.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i>Responsive Design</li>
+                        <li><i class="fas fa-check"></i>Modern Frameworks</li>
+                        <li><i class="fas fa-check"></i>Performance Optimization</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-wordpress"></i>
+                    </div>
+                    <h3>WordPress Development</h3>
+                    <p>Custom WordPress solutions tailored to your needs. From themes and plugins to complete e-commerce platforms.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i>Custom Themes</li>
+                        <li><i class="fas fa-check"></i>Plugin Development</li>
+                        <li><i class="fas fa-check"></i>E-commerce Solutions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="services-cta">
+                <p>Looking for a custom solution?</p>
+                <a href="#contact" class="btn primary">Let's Discuss Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">My Portfolio</h2>
+            <p class="section-subtitle">Showcasing Innovation Through Code</p>
+
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+                <button class="filter-btn" data-filter="web">Websites</button>
+                <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+                <button class="filter-btn" data-filter="business">Business Solutions</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Mobile Apps -->
+                <div class="portfolio-item mobile">
+                    <div class="portfolio-content">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Blood+Donation+App" alt="Blood Donation App">
+                        <div class="portfolio-overlay">
+                            <h3>Blood Donation App</h3>
+                            <p>Emergency blood donation platform connecting donors with patients. Features real-time location tracking, push notifications, and medical history management.</p>
+                            <div class="tech-stack">
+                                <span>Flutter</span>
+                                <span>Firebase</span>
+                                <span>Google Maps</span>
+                                <span>Node.js</span>
+                            </div>
+                            <a href="case-studies/blood-donation-app.html" class="btn secondary">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item mobile">
+                    <div class="portfolio-content">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Lets+Connect+App" alt="Let's Connect App">
+                        <div class="portfolio-overlay">
+                            <h3>Let's Connect</h3>
+                            <p>Full-featured messaging app with end-to-end encryption, group chats, voice/video calls, file sharing, and status updates. Supports both personal and business accounts.</p>
+                            <div class="tech-stack">
+                                <span>Flutter</span>
+                                <span>WebSocket</span>
+                                <span>MongoDB</span>
+                                <span>WebRTC</span>
+                            </div>
+                            <a href="case-studies/lets-connect-app.html" class="btn secondary">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item mobile business">
+                    <div class="portfolio-content">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Inventory+Pro" alt="Inventory Pro App">
+                        <div class="portfolio-overlay">
+                            <h3>Inventory Pro</h3>
+                            <p>Advanced inventory management system with barcode scanning, stock alerts, supplier management, and analytics dashboard. Includes offline support and multi-warehouse management.</p>
+                            <div class="tech-stack">
+                                <span>Flutter</span>
+                                <span>Node.js</span>
+                                <span>PostgreSQL</span>
+                                <span>Redis</span>
+                            </div>
+                            <a href="case-studies/inventory-pro.html" class="btn secondary">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item mobile">
+                    <div class="portfolio-content">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Language+Learning" alt="Language Learning App">
+                        <div class="portfolio-overlay">
+                            <h3>LinguaLearn</h3>
+                            <p>Interactive language learning platform with speech recognition, personalized lessons, progress tracking, and social learning features. Supports 12+ languages with offline mode.</p>
+                            <div class="tech-stack">
+                                <span>Flutter</span>
+                                <span>ML Kit</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <a href="case-studies/language-learning-app.html" class="btn secondary">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item mobile business">
+                    <div class="portfolio-content">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Field+Force+Pro" alt="Field Force Management">
+                        <div class="portfolio-overlay">
+                            <h3>Field Force Pro</h3>
+                            <p>Comprehensive field workforce management solution with route optimization, task assignment, real-time tracking, and performance analytics. Includes expense management and digital forms.</p>
+                            <div class="tech-stack">
+                                <span>Flutter</span>
+                                <span>Firebase</span>
+                                <span>Maps API</span>
+                                <span>Node.js</span>
+                            </div>
+                            <a href="case-studies/field-force-pro.html" class="btn secondary">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Solutions -->
+                <div class="portfolio-item web business">
+                    <div class="portfolio-content">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=HR+Management" alt="HR Management System">
+                        <div class="portfolio-overlay">
+                            <h3>HR Management Suite</h3>
+                            <p>Enterprise HR platform with automated payroll, attendance tracking, performance reviews, and recruitment portal. Features custom workflow automation and compliance reporting.</p>
+                            <div class="tech-stack">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MySQL</span>
+                                <span>Redis</span>
+                            </div>
+                            <a href="case-studies/hr-management-suite.html" class="btn secondary">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item web business">
+                    <div class="portfolio-content">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Restaurant+POS" alt="Restaurant POS">
+                        <div class="portfolio-overlay">
+                            <h3>Restaurant POS</h3>
+                            <p>Modern point of sale system with table management, kitchen display, inventory tracking, and customer loyalty program. Includes online ordering integration and analytics dashboard.</p>
+                            <div class="tech-stack">
+                                <span>React</span>
+                                <span>Express</span>
+                                <span>Socket.io</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <a href="case-studies/restaurant-pos.html" class="btn secondary">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-commerce Projects -->
+                <div class="portfolio-item web ecommerce">
+                    <div class="portfolio-content">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Spices+Hub" alt="Spices Hub Website">
+                        <div class="portfolio-overlay">
+                            <h3>Spices Hub</h3>
+                            <p>Global B2B/B2C spice trading platform with multi-vendor support, bulk ordering, quality certification tracking, and international shipping integration. Supports multiple currencies and languages.</p>
+                            <div class="tech-stack">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                                <span>Stripe</span>
+                            </div>
+                            <a href="case-studies/spices-hub.html" class="btn secondary">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item web ecommerce">
+                    <div class="portfolio-content">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Furniture+Store" alt="Luxury Furniture Store">
+                        <div class="portfolio-overlay">
+                            <h3>LuxeFurnish</h3>
+                            <p>Premium furniture e-commerce platform with AR visualization, custom design tools, and 3D product configurator. Features virtual showroom and interior design consultation booking.</p>
+                            <div class="tech-stack">
+                                <span>Next.js</span>
+                                <span>Three.js</span>
+                                <span>Stripe</span>
+                                <span>AWS</span>
+                            </div>
+                            <a href="case-studies/luxefurnish.html" class="btn secondary">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item web ecommerce">
+                    <div class="portfolio-content">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Art+Gallery" alt="Digital Art Marketplace">
+                        <div class="portfolio-overlay">
+                            <h3>ArtVerse</h3>
+                            <p>NFT-powered digital art marketplace with creator tools, royalty management, and social features. Includes auction system, artwork authentication, and integrated crypto payments.</p>
+                            <div class="tech-stack">
+                                <span>React</span>
+                                <span>Web3.js</span>
+                                <span>IPFS</span>
+                                <span>Solidity</span>
+                            </div>
+                            <a href="case-studies/artverse.html" class="btn secondary">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Web Projects -->
+                <div class="portfolio-item web">
+                    <div class="portfolio-content">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Real+Estate+Pro" alt="Real Estate Platform">
+                        <div class="portfolio-overlay">
+                            <h3>RealEstate Pro</h3>
+                            <p>Comprehensive real estate platform with virtual property tours, mortgage calculator, and agent CRM. Features AI-powered property valuation and document management system.</p>
+                            <div class="tech-stack">
+                                <span>Next.js</span>
+                                <span>Three.js</span>
+                                <span>PostgreSQL</span>
+                                <span>ML APIs</span>
+                            </div>
+                            <a href="case-studies/realestate-pro.html" class="btn secondary">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item web business">
+                    <div class="portfolio-content">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=School+Management" alt="School Management System">
+                        <div class="portfolio-overlay">
+                            <h3>EduManage</h3>
+                            <p>Complete school management system with attendance tracking, grade management, and parent communication portal. Includes online learning integration and resource management.</p>
+                            <div class="tech-stack">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                                <span>Socket.io</span>
+                            </div>
+                            <a href="case-studies/edumanage.html" class="btn secondary">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-cta">
+                <p>Interested in seeing detailed case studies of my work?</p>
+                <a href="https://www.linkedin.com/in/ahmer-ali-1a3226316" target="_blank" class="btn primary">Visit My LinkedIn Profile</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Testimonials</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="quote"><i class="fas fa-quote-left"></i></div>
+                    <p>"Ahmer's expertise in Flutter development is outstanding. He transformed our complex requirements into a sleek, high-performance app that our users love. His attention to detail and commitment to quality made him a valuable partner for our healthcare startup."</p>
+                    <div class="client-info">
+                        <h4>Sarah Anderson</h4>
+                        <p>CTO, HealthTech Solutions, USA</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote"><i class="fas fa-quote-left"></i></div>
+                    <p>"Working with Ahmer was a game-changer for our e-commerce platform. His deep understanding of both frontend and backend technologies helped us scale our operations seamlessly. The custom features he implemented increased our conversion rate by 40%."</p>
+                    <div class="client-info">
+                        <h4>Michael Chen</h4>
+                        <p>Founder, GlobalMart, Singapore</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote"><i class="fas fa-quote-left"></i></div>
+                    <p>"Ahmer's work on our school management system was exceptional. He understood our local requirements perfectly while implementing international best practices. The system has significantly improved our administrative efficiency and parent communication."</p>
+                    <div class="client-info">
+                        <h4>Asad Khan</h4>
+                        <p>Director, Education Innovation Network, Pakistan</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote"><i class="fas fa-quote-left"></i></div>
+                    <p>"We hired Ahmer for a critical blockchain project, and he delivered beyond our expectations. His technical prowess in Web3 development and ability to optimize smart contracts saved us significant gas costs. A true professional who brings both expertise and innovation."</p>
+                    <div class="client-info">
+                        <h4>Emma Thompson</h4>
+                        <p>Product Lead, CryptoVerse, UK</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote"><i class="fas fa-quote-left"></i></div>
+                    <p>"Ahmer's contribution to our real estate platform was invaluable. His implementation of AR visualization features and property analytics has set us apart in the market. His proactive communication and problem-solving skills made the development process smooth."</p>
+                    <div class="client-info">
+                        <h4>Zain Ahmed</h4>
+                        <p>CEO, PropertyTech Solutions, UAE</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote"><i class="fas fa-quote-left"></i></div>
+                    <p>"Outstanding development work on our inventory management system. Ahmer's solution helped us automate our multi-warehouse operations and reduced manual errors by 95%. His understanding of business processes makes him more than just a developer."</p>
+                    <div class="client-info">
+                        <h4>David Miller</h4>
+                        <p>Operations Director, LogisticsPro, Australia</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="prev-btn" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-btn" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p><a href="mailto:ahmercreations@gmail.com">ahmercreations@gmail.com</a></p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <p><a href="https://wa.me/923185367721" target="_blank">+92 318 5367721</a></p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-location-dot"></i>
+                        <p>Pakistan</p>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/ahmer-ali-1a3226316" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 Ahmer Ali. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html> 

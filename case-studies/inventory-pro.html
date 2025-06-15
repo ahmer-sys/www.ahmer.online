@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Pro Case Study - Ahmer Ali Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-logo">Ahmer Ali</div>
+        <a href="../index.html" class="nav-back">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+    </nav>
+
+    <div class="case-study">
+        <header class="case-study-header">
+            <h1>Inventory Pro</h1>
+            <p>Advanced inventory management system with multi-warehouse support</p>
+            <div class="tech-stack">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Redis</span>
+            </div>
+        </header>
+
+        <div class="case-study-content">
+            <section class="case-study-section">
+                <h2>Project Overview</h2>
+                <p>Inventory Pro is a comprehensive inventory management solution designed for businesses managing multiple warehouses and complex supply chains. The system provides real-time inventory tracking, automated stock alerts, and detailed analytics for informed decision-making.</p>
+                <p>The application was developed to address the challenges of modern inventory management, offering both online and offline capabilities to ensure uninterrupted operations.</p>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Barcode Scanning</h3>
+                        <p>Advanced barcode and QR code scanning capabilities for quick product identification and inventory updates, supporting multiple barcode formats.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Multi-Warehouse Management</h3>
+                        <p>Centralized control of multiple warehouses with real-time synchronization and transfer management between locations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Stock Alerts & Forecasting</h3>
+                        <p>Intelligent stock level monitoring with automated alerts and predictive analytics for inventory forecasting.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Supplier Management</h3>
+                        <p>Complete supplier relationship management with order tracking, performance metrics, and automated reordering systems.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Technical Implementation</h2>
+                <div class="challenges-solutions">
+                    <div class="challenge-card">
+                        <h3>Challenge: Offline Functionality</h3>
+                        <p>Required robust offline capabilities while ensuring data consistency across all devices.</p>
+                        <div class="solution">
+                            <h4>Solution:</h4>
+                            <p>Implemented local SQLite database with sophisticated sync mechanisms using custom conflict resolution algorithms. Used background workers for data synchronization when connectivity is restored.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Challenge: Real-time Updates</h3>
+                        <p>Needed to maintain real-time inventory accuracy across multiple locations and devices.</p>
+                        <div class="solution">
+                            <h4>Solution:</h4>
+                            <p>Utilized Redis for real-time caching and implemented WebSocket connections for instant updates. Developed a queue-based system for handling concurrent inventory modifications.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>Challenge: Performance at Scale</h3>
+                        <p>System needed to handle millions of SKUs while maintaining quick search and filter operations.</p>
+                        <div class="solution">
+                            <h4>Solution:</h4>
+                            <p>Implemented advanced indexing strategies in PostgreSQL and utilized materialized views for complex reports. Added Redis caching layer for frequently accessed data.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Project Gallery</h2>
+                <div class="project-gallery">
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Dashboard" alt="Inventory Dashboard">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Barcode+Scanner" alt="Barcode Scanner Interface">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/800x600/transparent/666666?text=Analytics" alt="Analytics Dashboard">
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Results & Impact</h2>
+                <p>Inventory Pro has delivered significant improvements for businesses:</p>
+                <ul>
+                    <li>Reduced inventory holding costs by 25%</li>
+                    <li>Improved order fulfillment accuracy to 99.9%</li>
+                    <li>Decreased stockout incidents by 60%</li>
+                    <li>Successfully managing over 5 million SKUs across 100+ warehouses</li>
+                </ul>
+            </section>
+
+            <div class="case-study-nav">
+                <a href="lets-connect-app.html" class="nav-link">
+                    <i class="fas fa-arrow-left"></i> Previous: Let's Connect
+                </a>
+                <a href="language-learning-app.html" class="nav-link">
+                    Next: Language Learning App <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 Ahmer Ali. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="../js/script.js"></script>
+</body>
+</html> 
