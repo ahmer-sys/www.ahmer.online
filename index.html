@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ahmer Ali - Flutter and Web Developer Portfolio">
-    <title>Ahmer Ali - Portfolio</title>
+    <meta name="description" content="Ahmer Ali - Expert Flutter Developer & Full-Stack Web Developer specializing in mobile apps and responsive web applications. Portfolio showcasing innovative digital solutions.">
+    <meta name="keywords" content="Flutter Developer, Web Developer, Full Stack Developer, Mobile App Developer, Pakistan">
+    <meta name="author" content="Ahmer Ali">
+    <meta property="og:title" content="Ahmer Ali - Flutter & Web Developer Portfolio">
+    <meta property="og:description" content="Expert Flutter Developer & Full-Stack Web Developer specializing in mobile apps and responsive web applications.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ahmer.online">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="canonical" href="https://www.ahmer.online">
+    <title>Ahmer Ali - Flutter & Web Developer Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -65,13 +76,74 @@
         </div>
     </section>
 
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-content">
+                <div class="profile-image">
+                    <img src="assets/images/profile.jpg" alt="Professional Profile Picture">
+                </div>
+                <div class="profile-text">
+                    <h2>About Me</h2>
+                    <p>Hi, I'm a passionate Software Engineer with expertise in building innovative digital solutions. I specialize in full-stack development, creating robust web applications, and delivering high-quality software products that solve real-world problems.</p>
+                    <p>With a strong foundation in modern technologies and best practices, I focus on creating scalable, efficient, and user-friendly applications that make a difference.</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-image fade-in">
-                    <img src="assets/images/profile.jpg" alt="Ahmer Ali" class="profile-img">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="assets/images/profile.jpg" alt="Ahmer Ali" class="profile-img">
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="contact-details">
+                                    <h3>Let's Connect</h3>
+                                    <div class="contact-item">
+                                        <i class="fab fa-whatsapp"></i>
+                                        <span>+923185367721</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="far fa-envelope"></i>
+                                        <span>ahmercreations@gmail.com</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Murree, Pakistan</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fab fa-linkedin"></i>
+                                        <span>linkedin.com/in/ahmer-ali</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fab fa-github"></i>
+                                        <span>github.com/ahmer-ali</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-text">
                     <p>As a versatile Full-Stack Developer with expertise in Flutter, Web Development, and WordPress, I transform innovative ideas into powerful digital solutions. With a passion for creating seamless user experiences, I specialize in developing cross-platform mobile applications and responsive websites that make a lasting impact.</p>
@@ -523,7 +595,7 @@
         </div>
     </footer>
 
-    <!-- Custom JavaScript -->
-    <script src="js/script.js"></script>
+    <!-- Scripts -->
+    <script src="js/script.js" defer></script>
 </body>
 </html> 
