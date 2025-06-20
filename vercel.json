@@ -1,5 +1,9 @@
 {
   "version": 2,
+  "name": "ahmer-portfolio",
+  "public": true,
+  "buildCommand": null,
+  "outputDirectory": ".",
   "builds": [
     {
       "src": "**/*",
@@ -13,6 +17,7 @@
     }
   ],
   "github": {
-    "silent": true
+    "silent": true,
+    "enabled": true
   }
 } 

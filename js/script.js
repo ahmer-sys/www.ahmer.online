@@ -1,3 +1,13 @@
+// Loading Animation
+window.addEventListener('load', () => {
+    const loadingScreen = document.querySelector('.loading-screen');
+    setTimeout(() => {
+        loadingScreen.classList.add('hidden');
+        // Enable smooth scrolling after loading
+        document.documentElement.style.scrollBehavior = 'smooth';
+    }, 1500);
+});
+
 // DOM Elements
 const navbar = document.querySelector('.navbar');
 const mobileMenuBtn = document.querySelector('.mobile-menu');
@@ -39,30 +49,27 @@ document.body.dataset.theme = localStorage.getItem('theme') || 'dark';
 themeToggle.querySelector('i').className = document.body.dataset.theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
 
 // Mobile Menu Toggle
-mobileMenuBtn.addEventListener('click', () => {
+const mobileMenu = document.querySelector('.mobile-menu');
+
+mobileMenu.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
     navLinks.classList.toggle('active');
-    mobileMenuBtn.classList.toggle('active');
-    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
 });
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (navLinks.classList.contains('active') && 
-        !navLinks.contains(e.target) && 
-        !mobileMenuBtn.contains(e.target)) {
+    if (!e.target.closest('.navbar')) {
+        mobileMenu.classList.remove('active');
         navLinks.classList.remove('active');
-        mobileMenuBtn.classList.remove('active');
-        document.body.style.overflow = '';
     }
-});
-
-// Close mobile menu when clicking on a link
-navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        mobileMenuBtn.classList.remove('active');
-        document.body.style.overflow = '';
-    });
 });
 
 // Theme Toggle
@@ -246,4 +253,126 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
-}); 
+});
+
+// Mobile-specific interactions
+if (window.innerWidth <= 768) {
+    // Scroll Progress Indicator
+    const scrollProgress = document.createElement('div');
+    scrollProgress.className = 'scroll-progress';
+    document.body.appendChild(scrollProgress);
+
+    window.addEventListener('scroll', () => {
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        scrollProgress.style.transform = `scaleX(${scrolled / 100})`;
+    });
+
+    // Pull to Refresh Effect
+    let touchStart = 0;
+    const hero = document.querySelector('.hero');
+
+    document.addEventListener('touchstart', (e) => {
+        touchStart = e.touches[0].clientY;
+    }, { passive: true });
+
+    document.addEventListener('touchmove', (e) => {
+        if (window.scrollY === 0) {
+            const touchDiff = e.touches[0].clientY - touchStart;
+            if (touchDiff > 0 && touchDiff < 80) {
+                hero.classList.add('pull-down');
+                hero.style.transform = `translateY(${touchDiff / 3}px)`;
+            }
+        }
+    }, { passive: true });
+
+    document.addEventListener('touchend', () => {
+        hero.classList.remove('pull-down');
+        hero.style.transform = '';
+    });
+
+    // Smooth Testimonial Swipe
+    const testimonialSlider = document.querySelector('.testimonials-slider');
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    let startX = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let isDragging = false;
+    let currentIndex = 0;
+    let animationID;
+
+    testimonialCards.forEach((card, index) => {
+        card.addEventListener('touchstart', touchStart);
+        card.addEventListener('touchmove', touchMove);
+        card.addEventListener('touchend', touchEnd);
+    });
+
+    function touchStart(event) {
+        startX = event.touches[0].clientX;
+        isDragging = true;
+        animationID = requestAnimationFrame(animation);
+    }
+
+    function touchMove(event) {
+        if (isDragging) {
+            const currentX = event.touches[0].clientX;
+            currentTranslate = prevTranslate + currentX - startX;
+        }
+    }
+
+    function touchEnd() {
+        isDragging = false;
+        cancelAnimationFrame(animationID);
+        
+        const moveBy = currentTranslate - prevTranslate;
+        
+        if (Math.abs(moveBy) > 100) {
+            if (moveBy > 0 && currentIndex > 0) {
+                currentIndex--;
+            } else if (moveBy < 0 && currentIndex < testimonialCards.length - 1) {
+                currentIndex++;
+            }
+        }
+        
+        prevTranslate = currentIndex * -window.innerWidth;
+        currentTranslate = prevTranslate;
+        
+        testimonialSlider.style.transform = `translateX(${currentTranslate}px)`;
+        testimonialSlider.style.transition = 'transform 0.3s ease';
+    }
+
+    function animation() {
+        if (isDragging) {
+            testimonialSlider.style.transform = `translateX(${currentTranslate}px)`;
+            testimonialSlider.style.transition = 'none';
+            requestAnimationFrame(animation);
+        }
+    }
+
+    // Enhanced Form Interactions
+    const formInputs = document.querySelectorAll('.form-group input, .form-group textarea');
+    
+    formInputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            input.parentElement.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', () => {
+            input.parentElement.classList.remove('focused');
+        });
+    });
+
+    // Smooth Scroll for Mobile
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+} 
