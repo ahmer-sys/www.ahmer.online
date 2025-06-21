@@ -1,13 +1,3 @@
-// Loading Animation
-window.addEventListener('load', () => {
-    const loadingScreen = document.querySelector('.loading-screen');
-    setTimeout(() => {
-        loadingScreen.classList.add('hidden');
-        // Enable smooth scrolling after loading
-        document.documentElement.style.scrollBehavior = 'smooth';
-    }, 1500);
-});
-
 // DOM Elements
 const navbar = document.querySelector('.navbar');
 const mobileMenuBtn = document.querySelector('.mobile-menu');
@@ -54,6 +44,12 @@ const mobileMenu = document.querySelector('.mobile-menu');
 mobileMenu.addEventListener('click', () => {
     mobileMenu.classList.toggle('active');
     navLinks.classList.toggle('active');
+    
+    // Toggle aria-expanded for accessibility
+    mobileMenu.setAttribute('aria-expanded', mobileMenu.classList.contains('active'));
+    
+    // Toggle body scroll
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
 });
 
 // Close mobile menu when clicking on a link
@@ -99,15 +95,69 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
+// Improved scroll handling for mobile
+let touchStart = 0;
+let touchEnd = 0;
+
+document.addEventListener('touchstart', (e) => {
+    touchStart = e.touches[0].clientY;
+});
+
+document.addEventListener('touchmove', (e) => {
+    touchEnd = e.touches[0].clientY;
+});
+
+document.addEventListener('touchend', () => {
+    if (touchStart - touchEnd > 50) {
+        // Scrolling down
+        navbar.classList.add('scroll-down');
+        navbar.classList.remove('scroll-up');
+    } else if (touchEnd - touchStart > 50) {
+        // Scrolling up
+        navbar.classList.remove('scroll-down');
+        navbar.classList.add('scroll-up');
+    }
+});
+
+// Enhanced smooth scroll for better mobile performance
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            // Close mobile menu if open
+            mobileMenu.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
+
+            // Smooth scroll with dynamic offset based on screen size
+            const headerOffset = window.innerWidth <= 768 ? 60 : 80;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
 // Intersection Observer for fade-in animations
 const fadeElements = document.querySelectorAll('.fade-in');
 const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            // Ensure animations work on mobile
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
         }
     });
-}, { threshold: 0.1 });
+}, { 
+    threshold: 0.1,
+    rootMargin: '50px'  // Start animation slightly before element comes into view
+});
 
 fadeElements.forEach(element => fadeObserver.observe(element));
 
@@ -235,144 +285,4 @@ contactForm?.addEventListener('submit', async (e) => {
 // Email validation helper
 function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-// Smooth scroll to sections
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const headerOffset = 80;
-            const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Mobile-specific interactions
-if (window.innerWidth <= 768) {
-    // Scroll Progress Indicator
-    const scrollProgress = document.createElement('div');
-    scrollProgress.className = 'scroll-progress';
-    document.body.appendChild(scrollProgress);
-
-    window.addEventListener('scroll', () => {
-        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (window.scrollY / windowHeight) * 100;
-        scrollProgress.style.transform = `scaleX(${scrolled / 100})`;
-    });
-
-    // Pull to Refresh Effect
-    let touchStart = 0;
-    const hero = document.querySelector('.hero');
-
-    document.addEventListener('touchstart', (e) => {
-        touchStart = e.touches[0].clientY;
-    }, { passive: true });
-
-    document.addEventListener('touchmove', (e) => {
-        if (window.scrollY === 0) {
-            const touchDiff = e.touches[0].clientY - touchStart;
-            if (touchDiff > 0 && touchDiff < 80) {
-                hero.classList.add('pull-down');
-                hero.style.transform = `translateY(${touchDiff / 3}px)`;
-            }
-        }
-    }, { passive: true });
-
-    document.addEventListener('touchend', () => {
-        hero.classList.remove('pull-down');
-        hero.style.transform = '';
-    });
-
-    // Smooth Testimonial Swipe
-    const testimonialSlider = document.querySelector('.testimonials-slider');
-    const testimonialCards = document.querySelectorAll('.testimonial-card');
-    let startX = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
-    let isDragging = false;
-    let currentIndex = 0;
-    let animationID;
-
-    testimonialCards.forEach((card, index) => {
-        card.addEventListener('touchstart', touchStart);
-        card.addEventListener('touchmove', touchMove);
-        card.addEventListener('touchend', touchEnd);
-    });
-
-    function touchStart(event) {
-        startX = event.touches[0].clientX;
-        isDragging = true;
-        animationID = requestAnimationFrame(animation);
-    }
-
-    function touchMove(event) {
-        if (isDragging) {
-            const currentX = event.touches[0].clientX;
-            currentTranslate = prevTranslate + currentX - startX;
-        }
-    }
-
-    function touchEnd() {
-        isDragging = false;
-        cancelAnimationFrame(animationID);
-        
-        const moveBy = currentTranslate - prevTranslate;
-        
-        if (Math.abs(moveBy) > 100) {
-            if (moveBy > 0 && currentIndex > 0) {
-                currentIndex--;
-            } else if (moveBy < 0 && currentIndex < testimonialCards.length - 1) {
-                currentIndex++;
-            }
-        }
-        
-        prevTranslate = currentIndex * -window.innerWidth;
-        currentTranslate = prevTranslate;
-        
-        testimonialSlider.style.transform = `translateX(${currentTranslate}px)`;
-        testimonialSlider.style.transition = 'transform 0.3s ease';
-    }
-
-    function animation() {
-        if (isDragging) {
-            testimonialSlider.style.transform = `translateX(${currentTranslate}px)`;
-            testimonialSlider.style.transition = 'none';
-            requestAnimationFrame(animation);
-        }
-    }
-
-    // Enhanced Form Interactions
-    const formInputs = document.querySelectorAll('.form-group input, .form-group textarea');
-    
-    formInputs.forEach(input => {
-        input.addEventListener('focus', () => {
-            input.parentElement.classList.add('focused');
-        });
-        
-        input.addEventListener('blur', () => {
-            input.parentElement.classList.remove('focused');
-        });
-    });
-
-    // Smooth Scroll for Mobile
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
 } 
