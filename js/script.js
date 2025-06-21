@@ -4,36 +4,22 @@ const mobileMenuBtn = document.querySelector('.mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 const themeToggle = document.querySelector('.theme-toggle');
 const sections = document.querySelectorAll('section');
+const contactForm = document.getElementById('contact-form');
+
+// Portfolio Elements
 const filterButtons = document.querySelectorAll('.filter-btn');
 const portfolioGrid = document.querySelector('.portfolio-grid');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
-const contactForm = document.getElementById('contact-form');
 
-// Sample portfolio items (replace with your actual projects)
-const portfolioItems = [
-    {
-        title: 'Mobile App',
-        category: 'mobile',
-        image: 'assets/project1.jpg',
-        description: 'Flutter-based mobile application',
-        link: '#'
-    },
-    {
-        title: 'Web Platform',
-        category: 'web',
-        image: 'assets/project2.jpg',
-        description: 'Responsive web application',
-        link: '#'
-    },
-    {
-        title: 'UI Design',
-        category: 'design',
-        image: 'assets/project3.jpg',
-        description: 'Modern user interface design',
-        link: '#'
-    }
-    // Add more portfolio items as needed
-];
+// Typing Animation
+const typedTextSpan = document.querySelector('.typed-text');
+const cursorSpan = document.querySelector('.cursor');
+const textArray = ['Flutter Developer', 'Web Developer', 'UI/UX Designer'];
+const typingDelay = 100;
+const erasingDelay = 50;
+const newTextDelay = 2000;
+let textArrayIndex = 0;
+let charIndex = 0;
 
 // Set dark theme as default
 document.body.dataset.theme = localStorage.getItem('theme') || 'dark';
@@ -175,8 +161,86 @@ const navObserver = new IntersectionObserver((entries) => {
 
 sections.forEach(section => navObserver.observe(section));
 
-// Portfolio Filtering and Animations
-const filterButtons = document.querySelectorAll('.filter-btn');
+function type() {
+    if (charIndex < textArray[textArrayIndex].length) {
+        if (!cursorSpan.classList.contains('typing')) {
+            cursorSpan.classList.add('typing');
+        }
+        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+    } else {
+        cursorSpan.classList.remove('typing');
+        setTimeout(erase, newTextDelay);
+    }
+}
+
+function erase() {
+    if (charIndex > 0) {
+        if (!cursorSpan.classList.contains('typing')) {
+            cursorSpan.classList.add('typing');
+        }
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+    } else {
+        cursorSpan.classList.remove('typing');
+        textArrayIndex++;
+        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+        setTimeout(type, typingDelay + 1100);
+    }
+}
+
+// Start the typing animation
+document.addEventListener('DOMContentLoaded', () => {
+    if (textArray.length) setTimeout(type, newTextDelay + 250);
+});
+
+// Skills Animation
+function animateSkills() {
+    const skillItems = document.querySelectorAll('.skill-item');
+    
+    skillItems.forEach(item => {
+        const progress = item.getAttribute('data-progress');
+        const progressBar = item.querySelector('.skill-progress');
+        const percentage = item.querySelector('.skill-percentage');
+        
+        progressBar.style.width = '0%';
+        percentage.textContent = '0%';
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    let currentProgress = 0;
+                    const targetProgress = parseInt(progress);
+                    const duration = 1500; // Animation duration in milliseconds
+                    const steps = 60; // Number of steps in animation
+                    const increment = targetProgress / steps;
+                    const stepDuration = duration / steps;
+                    
+                    const animation = setInterval(() => {
+                        currentProgress += increment;
+                        if (currentProgress >= targetProgress) {
+                            currentProgress = targetProgress;
+                            clearInterval(animation);
+                        }
+                        progressBar.style.width = `${currentProgress}%`;
+                        percentage.textContent = `${Math.round(currentProgress)}%`;
+                    }, stepDuration);
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(item);
+    });
+}
+
+// Initialize skills animation
+document.addEventListener('DOMContentLoaded', () => {
+    animateSkills();
+});
 
 // Initialize Isotope grid
 let iso = new Isotope(portfolioGrid, {
@@ -283,7 +347,6 @@ nextBtn?.addEventListener('click', () => {
 // Initialize first slide
 showSlide(0);
 
-
 // Contact Form Validation and Submission
 contactForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -336,75 +399,6 @@ contactForm?.addEventListener('submit', async (e) => {
 function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
-
-// Typing Animation
-const typedTextSpan = document.querySelector('.typed-text');
-const cursorSpan = document.querySelector('.cursor');
-
-const textArray = ['Flutter Developer', 'Web Developer', 'UI/UX Designer'];
-const typingDelay = 100;
-const erasingDelay = 50;
-const newTextDelay = 2000;
-let textArrayIndex = 0;
-let charIndex = 0;
-
-function type() {
-    if (charIndex < textArray[textArrayIndex].length) {
-        if (!cursorSpan.classList.contains('typing')) {
-            cursorSpan.classList.add('typing');
-        }
-        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, typingDelay);
-    } else {
-        cursorSpan.classList.remove('typing');
-        setTimeout(erase, newTextDelay);
-    }
-}
-
-function erase() {
-    if (charIndex > 0) {
-        if (!cursorSpan.classList.contains('typing')) {
-            cursorSpan.classList.add('typing');
-        }
-        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(erase, erasingDelay);
-    } else {
-        cursorSpan.classList.remove('typing');
-        textArrayIndex++;
-        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-        setTimeout(type, typingDelay + 1100);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(type, newTextDelay + 250);
-});
-
-// Skills Animation
-const skillItems = document.querySelectorAll('.skill-item');
-const skillsSection = document.querySelector('.skills');
-
-function animateSkills() {
-    skillItems.forEach(item => {
-        const progress = item.getAttribute('data-progress');
-        const progressBar = item.querySelector('.skill-progress');
-        progressBar.style.setProperty('--progress', `${progress}%`);
-        item.classList.add('animate');
-    });
-}
-
-const skillsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateSkills();
-            skillsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-skillsObserver.observe(skillsSection);
 
 // Enhanced scroll handling
 let lastScrollTop = 0;
