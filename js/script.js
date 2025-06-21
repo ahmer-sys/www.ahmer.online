@@ -4,8 +4,9 @@ const mobileMenuBtn = document.querySelector('.mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 const themeToggle = document.querySelector('.theme-toggle');
 const sections = document.querySelectorAll('section');
-const filterBtns = document.querySelectorAll('.filter-btn');
+const filterButtons = document.querySelectorAll('.filter-btn');
 const portfolioGrid = document.querySelector('.portfolio-grid');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
 const contactForm = document.getElementById('contact-form');
 
 // Sample portfolio items (replace with your actual projects)
@@ -174,39 +175,88 @@ const navObserver = new IntersectionObserver((entries) => {
 
 sections.forEach(section => navObserver.observe(section));
 
-// Portfolio Filtering
+// Portfolio Filtering and Animations
 const filterButtons = document.querySelectorAll('.filter-btn');
-const portfolioGridItems = document.querySelectorAll('.portfolio-item');
 
+// Initialize Isotope grid
+let iso = new Isotope(portfolioGrid, {
+    itemSelector: '.portfolio-item',
+    layoutMode: 'fitRows',
+    transitionDuration: '0.6s',
+    stagger: 100
+});
+
+// Filter items on button click
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-        // Remove active class from all buttons
+        const filterValue = button.getAttribute('data-filter');
+        
+        // Update active state of filter buttons
         filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
         button.classList.add('active');
 
-        const filterValue = button.getAttribute('data-filter');
-
-        portfolioGridItems.forEach(item => {
-            if (filterValue === 'all' || item.classList.contains(filterValue)) {
-                item.style.display = 'block';
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
-                }, 100);
-            } else {
+        if (filterValue === 'all') {
+            // Show all items with animation
+            portfolioItems.forEach(item => {
                 item.style.opacity = '0';
                 item.style.transform = 'translateY(20px)';
-                setTimeout(() => {
-                    item.style.display = 'none';
-                }, 400);
-            }
-        });
+            });
+            
+            setTimeout(() => {
+                iso.arrange({ filter: '*' });
+                portfolioItems.forEach(item => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                });
+            }, 100);
+        } else {
+            // Filter items with animation
+            portfolioItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+            });
+            
+            setTimeout(() => {
+                iso.arrange({ filter: `.${filterValue}` });
+                document.querySelectorAll(`.${filterValue}`).forEach(item => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                });
+            }, 100);
+        }
     });
 });
 
-// Initialize portfolio items visibility
-document.querySelector('.filter-btn[data-filter="all"]').click();
+// Portfolio item hover effects
+portfolioItems.forEach(item => {
+    const overlay = item.querySelector('.portfolio-overlay');
+    const img = item.querySelector('img');
+    
+    item.addEventListener('mouseenter', () => {
+        overlay.style.transform = 'translateY(0)';
+        img.style.transform = 'scale(1.1) rotate(2deg)';
+    });
+    
+    item.addEventListener('mouseleave', () => {
+        overlay.style.transform = 'translateY(100%)';
+        img.style.transform = 'scale(1) rotate(0)';
+    });
+});
+
+// Intersection Observer for portfolio items
+const portfolioObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            portfolioObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.2,
+    rootMargin: '50px'
+});
+
+portfolioItems.forEach(item => portfolioObserver.observe(item));
 
 // Testimonials Slider
 let currentSlide = 0;
