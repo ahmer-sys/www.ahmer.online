@@ -285,4 +285,85 @@ contactForm?.addEventListener('submit', async (e) => {
 // Email validation helper
 function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-} 
+}
+
+// Typing Animation
+const typedTextSpan = document.querySelector('.typed-text');
+const cursorSpan = document.querySelector('.cursor');
+
+const textArray = [
+    'Flutter Developer',
+    'Full-Stack Developer',
+    'Mobile App Expert',
+    'UI/UX Designer'
+];
+let textArrayIndex = 0;
+let charIndex = 0;
+
+function type() {
+    if (charIndex < textArray[textArrayIndex].length) {
+        if (!cursorSpan.classList.contains('typing')) {
+            cursorSpan.classList.add('typing');
+        }
+        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 100);
+    } else {
+        cursorSpan.classList.remove('typing');
+        setTimeout(erase, 2000);
+    }
+}
+
+function erase() {
+    if (charIndex > 0) {
+        if (!cursorSpan.classList.contains('typing')) {
+            cursorSpan.classList.add('typing');
+        }
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 50);
+    } else {
+        cursorSpan.classList.remove('typing');
+        textArrayIndex++;
+        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+        setTimeout(type, 1000);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(type, 1000);
+});
+
+// Enhanced Intersection Observer for animations
+const animatedElements = document.querySelectorAll('.fade-in, .slide-in, .scale-in');
+const animationObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // Add specific animation class based on data attribute
+            const animation = entry.target.dataset.animation;
+            if (animation) {
+                entry.target.classList.add(animation);
+            }
+        }
+    });
+}, { 
+    threshold: 0.2,
+    rootMargin: '50px'
+});
+
+animatedElements.forEach(element => animationObserver.observe(element));
+
+// Parallax effect for floating shapes
+document.addEventListener('mousemove', (e) => {
+    const shapes = document.querySelectorAll('.shape');
+    const mouseX = e.clientX / window.innerWidth - 0.5;
+    const mouseY = e.clientY / window.innerHeight - 0.5;
+
+    shapes.forEach((shape, index) => {
+        const speed = (index + 1) * 20;
+        const x = mouseX * speed;
+        const y = mouseY * speed;
+        shape.style.transform = `translate(${x}px, ${y}px)`;
+    });
+}); 
