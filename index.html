@@ -50,38 +50,43 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <span class="hero-greeting">�� Hello, I'm</span>
-                    <h1 class="animate-text">Ahmer Ali</h1>
-                    <div class="typewriter">
-                        <span class="typed-text"></span><span class="cursor">&nbsp;</span>
-                    </div>
-                    <p class="hero-description">
-                        Transforming ideas into exceptional digital experiences through innovative mobile and web development solutions.
-                    </p>
-                    <div class="tech-specialties">
-                        <span class="tech-badge"><i class="fab fa-flutter"></i> Flutter Expert</span>
-                        <span class="tech-badge"><i class="fas fa-globe"></i> Full-Stack Dev</span>
-                        <span class="tech-badge"><i class="fas fa-mobile-alt"></i> Mobile Apps</span>
-                    </div>
-                    <div class="cta-buttons">
-                        <a href="#portfolio" class="btn primary">View My Work</a>
-                        <a href="#contact" class="btn secondary">Let's Talk</a>
-                    </div>
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="animate__animated animate__fadeInUp">
+                    Hi, I'm <span class="highlight">Ahmer Ali</span>
+                </h1>
+                <div class="typewriter-container animate__animated animate__fadeInUp animate__delay-1s">
+                    <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+                </div>
+                <p class="hero-description animate__animated animate__fadeInUp animate__delay-2s">
+                    Crafting innovative mobile and web solutions that transform ideas into reality
+                </p>
+                <div class="hero-cta animate__animated animate__fadeInUp animate__delay-3s">
+                    <a href="#contact" class="btn primary">Get in Touch</a>
+                    <a href="#portfolio" class="btn secondary">View My Work</a>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <div class="arrows">
+        <div class="drawer-menu">
+            <button class="drawer-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
+            </button>
+            <div class="drawer-content">
+                <nav>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <div class="social-links">
+                    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
         </div>
     </section>
@@ -89,99 +94,72 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <p class="section-subtitle">Expertise & Proficiency</p>
+            <h2 class="section-title" data-aos="fade-up">My Skills</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Technologies I work with</p>
             
             <div class="skills-grid">
-                <div class="skill-category">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
                     <h3>Mobile Development</h3>
-                    <div class="skill-item" data-progress="95">
-                        <div class="skill-info">
-                            <span class="skill-name">Flutter</span>
-                            <span class="skill-percentage">95%</span>
+                    <div class="skill-items">
+                        <div class="skill-item" data-progress="95">
+                            <div class="skill-info">
+                                <span class="skill-name">Flutter</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" data-percentage="95"></div>
+                            </div>
                         </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress"></div>
+                        <div class="skill-item" data-progress="90">
+                            <div class="skill-info">
+                                <span class="skill-name">Dart</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" data-percentage="90"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-item" data-progress="90">
-                        <div class="skill-info">
-                            <span class="skill-name">Dart</span>
-                            <span class="skill-percentage">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item" data-progress="85">
-                        <div class="skill-info">
-                            <span class="skill-name">React Native</span>
-                            <span class="skill-percentage">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress"></div>
+                        <div class="skill-item" data-progress="85">
+                            <div class="skill-info">
+                                <span class="skill-name">React Native</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" data-percentage="85"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="skill-category">
+                
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
                     <h3>Web Development</h3>
-                    <div class="skill-item" data-progress="90">
-                        <div class="skill-info">
-                            <span class="skill-name">HTML/CSS</span>
-                            <span class="skill-percentage">90%</span>
+                    <div class="skill-items">
+                        <div class="skill-item" data-progress="90">
+                            <div class="skill-info">
+                                <span class="skill-name">React.js</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" data-percentage="90"></div>
+                            </div>
                         </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress"></div>
+                        <div class="skill-item" data-progress="85">
+                            <div class="skill-info">
+                                <span class="skill-name">Node.js</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" data-percentage="85"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-item" data-progress="85">
-                        <div class="skill-info">
-                            <span class="skill-name">JavaScript</span>
-                            <span class="skill-percentage">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item" data-progress="80">
-                        <div class="skill-info">
-                            <span class="skill-name">React.js</span>
-                            <span class="skill-percentage">80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Backend Development</h3>
-                    <div class="skill-item" data-progress="85">
-                        <div class="skill-info">
-                            <span class="skill-name">Node.js</span>
-                            <span class="skill-percentage">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item" data-progress="80">
-                        <div class="skill-info">
-                            <span class="skill-name">PHP</span>
-                            <span class="skill-percentage">80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item" data-progress="75">
-                        <div class="skill-info">
-                            <span class="skill-name">MySQL</span>
-                            <span class="skill-percentage">75%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress"></div>
+                        <div class="skill-item" data-progress="80">
+                            <div class="skill-info">
+                                <span class="skill-name">MongoDB</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" data-percentage="80"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -192,87 +170,39 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Passionate about creating impactful solutions</p>
+            
             <div class="about-content">
-                <div class="about-image fade-in">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img src="assets/images/profile.jpg" alt="Ahmer Ali" class="profile-img">
-                            </div>
-                            <div class="flip-card-back">
-                                <div class="contact-details">
-                                    <h3>Let's Connect</h3>
-                                    <div class="contact-item">
-                                        <i class="fab fa-whatsapp"></i>
-                                        <span>+923185367721</span>
-                                    </div>
-                                    <div class="contact-item">
-                                        <i class="far fa-envelope"></i>
-                                        <span>ahmercreations@gmail.com</span>
-                                    </div>
-                                    <div class="contact-item">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span>Murree, Pakistan</span>
-                                    </div>
-                                    <div class="contact-item">
-                                        <i class="fab fa-linkedin"></i>
-                                        <span>linkedin.com/in/ahmer-ali</span>
-                                    </div>
-                                    <div class="contact-item">
-                                        <i class="fab fa-github"></i>
-                                        <span>github.com/ahmer-ali</span>
-                                    </div>
-                                </div>
+                <div class="about-image" data-aos="fade-right" data-aos-delay="200">
+                    <div class="image-container">
+                        <img src="assets/images/profile.jpg" alt="Ahmer Ali" class="profile-image">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3>Ahmer Ali</h3>
+                                <p>Flutter & Full Stack Developer</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="about-text">
-                    <p>As a versatile Full-Stack Developer with expertise in Flutter, Web Development, and WordPress, I transform innovative ideas into powerful digital solutions. With a passion for creating seamless user experiences, I specialize in developing cross-platform mobile applications and responsive websites that make a lasting impact.</p>
-                    
-                    <p>My approach combines technical excellence with creative problem-solving, ensuring each project not only meets but exceeds client expectations. Whether it's building robust mobile apps with Flutter, crafting custom WordPress solutions, or developing modern web applications, I deliver results that drive business growth and user engagement.</p>
-
-                    <div class="tech-stack">
-                        <span class="tech-tag"><i class="fab fa-flutter"></i>Flutter</span>
-                        <span class="tech-tag"><i class="fas fa-code"></i>Dart</span>
-                        <span class="tech-tag"><i class="fab fa-wordpress"></i>WordPress</span>
-                        <span class="tech-tag"><i class="fab fa-html5"></i>HTML5</span>
-                        <span class="tech-tag"><i class="fab fa-css3-alt"></i>CSS3</span>
-                        <span class="tech-tag"><i class="fab fa-js"></i>JavaScript</span>
-                        <span class="tech-tag"><i class="fab fa-react"></i>React</span>
-                        <span class="tech-tag"><i class="fab fa-php"></i>PHP</span>
-                    </div>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">3+</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-label">Projects Completed</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Client Satisfaction</div>
-                        </div>
-                    </div>
-                    <div class="key-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>Cross-Platform Mobile Apps</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-globe"></i>
-                            <span>Custom WordPress Solutions</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-code"></i>
-                            <span>Clean & Efficient Code</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-rocket"></i>
-                            <span>Performance Optimization</span>
+                <div class="about-text" data-aos="fade-left" data-aos-delay="300">
+                    <div class="about-card">
+                        <h3>Who I Am</h3>
+                        <p>A passionate developer with expertise in Flutter and full-stack development. I transform complex problems into elegant solutions.</p>
+                        
+                        <div class="about-stats">
+                            <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
+                                <span class="stat-number">4+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat-item" data-aos="zoom-in" data-aos-delay="500">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Projects Completed</span>
+                            </div>
+                            <div class="stat-item" data-aos="zoom-in" data-aos-delay="600">
+                                <span class="stat-number">30+</span>
+                                <span class="stat-label">Happy Clients</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -337,230 +267,207 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2 class="section-title">My Portfolio</h2>
+            <h2 class="section-title">Featured Projects</h2>
             <p class="section-subtitle">Showcasing Innovation Through Code</p>
 
             <div class="portfolio-filters">
                 <button class="filter-btn active" data-filter="all">All Projects</button>
                 <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
-                <button class="filter-btn" data-filter="web">Websites</button>
-                <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
-                <button class="filter-btn" data-filter="business">Business Solutions</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="enterprise">Enterprise</button>
             </div>
 
             <div class="portfolio-grid">
                 <!-- Mobile Apps -->
-                <div class="portfolio-item mobile">
-                    <div class="portfolio-content">
-                        <img src="https://placehold.co/800x600/transparent/666666?text=Blood+Donation+App" alt="Blood Donation App">
-                        <div class="portfolio-overlay">
-                            <h3>Blood Donation App</h3>
-                            <p>Emergency blood donation platform connecting donors with patients. Features real-time location tracking, push notifications, and medical history management.</p>
-                            <div class="tech-stack">
-                                <span>Flutter</span>
-                                <span>Firebase</span>
-                                <span>Google Maps</span>
-                                <span>Node.js</span>
+                <div class="portfolio-item mobile" data-category="mobile">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="assets/images/portfolio/field-force.jpg" alt="Field Force Pro">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-links">
+                                    <a href="case-studies/field-force-pro.html" class="btn-view-project">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <a href="case-studies/blood-donation-app.html" class="btn secondary">Case Study</a>
                         </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item mobile">
-                    <div class="portfolio-content">
-                        <img src="https://placehold.co/800x600/transparent/666666?text=Lets+Connect+App" alt="Let's Connect App">
-                        <div class="portfolio-overlay">
-                            <h3>Let's Connect</h3>
-                            <p>Full-featured messaging app with end-to-end encryption, group chats, voice/video calls, file sharing, and status updates. Supports both personal and business accounts.</p>
-                            <div class="tech-stack">
-                                <span>Flutter</span>
-                                <span>WebSocket</span>
-                                <span>MongoDB</span>
-                                <span>WebRTC</span>
-                            </div>
-                            <a href="case-studies/lets-connect-app.html" class="btn secondary">Case Study</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item mobile business">
-                    <div class="portfolio-content">
-                        <img src="https://placehold.co/800x600/transparent/666666?text=Inventory+Pro" alt="Inventory Pro App">
-                        <div class="portfolio-overlay">
-                            <h3>Inventory Pro</h3>
-                            <p>Advanced inventory management system with barcode scanning, stock alerts, supplier management, and analytics dashboard. Includes offline support and multi-warehouse management.</p>
-                            <div class="tech-stack">
-                                <span>Flutter</span>
-                                <span>Node.js</span>
-                                <span>PostgreSQL</span>
-                                <span>Redis</span>
-                            </div>
-                            <a href="case-studies/inventory-pro.html" class="btn secondary">Case Study</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item mobile">
-                    <div class="portfolio-content">
-                        <img src="https://placehold.co/800x600/transparent/666666?text=Language+Learning" alt="Language Learning App">
-                        <div class="portfolio-overlay">
-                            <h3>LinguaLearn</h3>
-                            <p>Interactive language learning platform with speech recognition, personalized lessons, progress tracking, and social learning features. Supports 12+ languages with offline mode.</p>
-                            <div class="tech-stack">
-                                <span>Flutter</span>
-                                <span>ML Kit</span>
-                                <span>Node.js</span>
-                                <span>MongoDB</span>
-                            </div>
-                            <a href="case-studies/language-learning-app.html" class="btn secondary">Case Study</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item mobile business">
-                    <div class="portfolio-content">
-                        <img src="https://placehold.co/800x600/transparent/666666?text=Field+Force+Pro" alt="Field Force Management">
-                        <div class="portfolio-overlay">
+                        <div class="portfolio-content">
                             <h3>Field Force Pro</h3>
-                            <p>Comprehensive field workforce management solution with route optimization, task assignment, real-time tracking, and performance analytics. Includes expense management and digital forms.</p>
+                            <p>A comprehensive field force management solution with real-time tracking, task management, and performance analytics.</p>
                             <div class="tech-stack">
                                 <span>Flutter</span>
-                                <span>Firebase</span>
-                                <span>Maps API</span>
                                 <span>Node.js</span>
+                                <span>MongoDB</span>
                             </div>
-                            <a href="case-studies/field-force-pro.html" class="btn secondary">Case Study</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Business Solutions -->
-                <div class="portfolio-item web business">
-                    <div class="portfolio-content">
-                        <img src="https://placehold.co/800x600/transparent/666666?text=HR+Management" alt="HR Management System">
-                        <div class="portfolio-overlay">
+                <div class="portfolio-item mobile" data-category="mobile">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="assets/images/portfolio/hr-management.jpg" alt="HR Management Suite">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-links">
+                                    <a href="case-studies/hr-management-suite.html" class="btn-view-project">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
                             <h3>HR Management Suite</h3>
-                            <p>Enterprise HR platform with automated payroll, attendance tracking, performance reviews, and recruitment portal. Features custom workflow automation and compliance reporting.</p>
+                            <p>Complete HR management system with attendance, payroll, and employee performance tracking.</p>
                             <div class="tech-stack">
-                                <span>React</span>
+                                <span>Flutter</span>
+                                <span>Firebase</span>
+                                <span>Cloud Functions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Apps -->
+                <div class="portfolio-item web" data-category="web">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="assets/images/portfolio/inventory-pro.jpg" alt="Inventory Pro">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-links">
+                                    <a href="case-studies/inventory-pro.html" class="btn-view-project">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Inventory Pro</h3>
+                            <p>Advanced inventory management system with barcode scanning, stock tracking, and automated reordering.</p>
+                            <div class="tech-stack">
+                                <span>React.js</span>
                                 <span>Node.js</span>
                                 <span>MySQL</span>
-                                <span>Redis</span>
                             </div>
-                            <a href="case-studies/hr-management-suite.html" class="btn secondary">Case Study</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="portfolio-item web business">
-                    <div class="portfolio-content">
-                        <img src="https://placehold.co/800x600/transparent/666666?text=Restaurant+POS" alt="Restaurant POS">
-                        <div class="portfolio-overlay">
-                            <h3>Restaurant POS</h3>
-                            <p>Modern point of sale system with table management, kitchen display, inventory tracking, and customer loyalty program. Includes online ordering integration and analytics dashboard.</p>
-                            <div class="tech-stack">
-                                <span>React</span>
-                                <span>Express</span>
-                                <span>Socket.io</span>
-                                <span>PostgreSQL</span>
+                <div class="portfolio-item web" data-category="web">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="assets/images/portfolio/language-learning.jpg" alt="Language Learning Platform">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-links">
+                                    <a href="case-studies/language-learning-app.html" class="btn-view-project">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <a href="case-studies/restaurant-pos.html" class="btn secondary">Case Study</a>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Language Learning Platform</h3>
+                            <p>Interactive language learning platform with AI-powered pronunciation feedback and personalized lessons.</p>
+                            <div class="tech-stack">
+                                <span>React.js</span>
+                                <span>Python</span>
+                                <span>TensorFlow</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Journey</h2>
+            <p class="section-subtitle">Where Innovation Meets Excellence</p>
+
+            <div class="experience-timeline">
+                <!-- Current Position -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Senior Flutter Developer</h3>
+                            <span class="company">Freelance & Consulting</span>
+                            <span class="duration">2022 - Present</span>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Leading complex mobile app development projects and providing technical consultation to various clients globally.</p>
+                            <ul class="achievement-list">
+                                <li>Delivered 20+ successful mobile applications</li>
+                                <li>Maintained 100% client satisfaction rate</li>
+                                <li>Specialized in scalable architecture design</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- E-commerce Projects -->
-                <div class="portfolio-item web ecommerce">
-                    <div class="portfolio-content">
-                        <img src="https://placehold.co/800x600/transparent/666666?text=Spices+Hub" alt="Spices Hub Website">
-                        <div class="portfolio-overlay">
-                            <h3>Spices Hub</h3>
-                            <p>Global B2B/B2C spice trading platform with multi-vendor support, bulk ordering, quality certification tracking, and international shipping integration. Supports multiple currencies and languages.</p>
-                            <div class="tech-stack">
-                                <span>React</span>
-                                <span>Node.js</span>
-                                <span>MongoDB</span>
-                                <span>Stripe</span>
-                            </div>
-                            <a href="case-studies/spices-hub.html" class="btn secondary">Case Study</a>
+                <!-- Previous Position -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Full Stack Developer</h3>
+                            <span class="company">Tech Innovators Inc.</span>
+                            <span class="duration">2020 - 2022</span>
                         </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item web ecommerce">
-                    <div class="portfolio-content">
-                        <img src="https://placehold.co/800x600/transparent/666666?text=Furniture+Store" alt="Luxury Furniture Store">
-                        <div class="portfolio-overlay">
-                            <h3>LuxeFurnish</h3>
-                            <p>Premium furniture e-commerce platform with AR visualization, custom design tools, and 3D product configurator. Features virtual showroom and interior design consultation booking.</p>
-                            <div class="tech-stack">
-                                <span>Next.js</span>
-                                <span>Three.js</span>
-                                <span>Stripe</span>
-                                <span>AWS</span>
-                            </div>
-                            <a href="case-studies/luxefurnish.html" class="btn secondary">Case Study</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item web ecommerce">
-                    <div class="portfolio-content">
-                        <img src="https://placehold.co/800x600/transparent/666666?text=Art+Gallery" alt="Digital Art Marketplace">
-                        <div class="portfolio-overlay">
-                            <h3>ArtVerse</h3>
-                            <p>NFT-powered digital art marketplace with creator tools, royalty management, and social features. Includes auction system, artwork authentication, and integrated crypto payments.</p>
-                            <div class="tech-stack">
-                                <span>React</span>
-                                <span>Web3.js</span>
-                                <span>IPFS</span>
-                                <span>Solidity</span>
-                            </div>
-                            <a href="case-studies/artverse.html" class="btn secondary">Case Study</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Additional Web Projects -->
-                <div class="portfolio-item web">
-                    <div class="portfolio-content">
-                        <img src="https://placehold.co/800x600/transparent/666666?text=Real+Estate+Pro" alt="Real Estate Platform">
-                        <div class="portfolio-overlay">
-                            <h3>RealEstate Pro</h3>
-                            <p>Comprehensive real estate platform with virtual property tours, mortgage calculator, and agent CRM. Features AI-powered property valuation and document management system.</p>
-                            <div class="tech-stack">
-                                <span>Next.js</span>
-                                <span>Three.js</span>
-                                <span>PostgreSQL</span>
-                                <span>ML APIs</span>
-                            </div>
-                            <a href="case-studies/realestate-pro.html" class="btn secondary">Case Study</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item web business">
-                    <div class="portfolio-content">
-                        <img src="https://placehold.co/800x600/transparent/666666?text=School+Management" alt="School Management System">
-                        <div class="portfolio-overlay">
-                            <h3>EduManage</h3>
-                            <p>Complete school management system with attendance tracking, grade management, and parent communication portal. Includes online learning integration and resource management.</p>
-                            <div class="tech-stack">
-                                <span>React</span>
-                                <span>Node.js</span>
-                                <span>MongoDB</span>
-                                <span>Socket.io</span>
-                            </div>
-                            <a href="case-studies/edumanage.html" class="btn secondary">Case Study</a>
+                        <div class="timeline-body">
+                            <p>Developed and maintained enterprise-level web applications using modern technologies.</p>
+                            <ul class="achievement-list">
+                                <li>Reduced application load time by 40%</li>
+                                <li>Implemented automated testing, improving code coverage by 75%</li>
+                                <li>Led a team of 5 developers</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="portfolio-cta">
-                <p>Interested in seeing detailed case studies of my work?</p>
-                <a href="https://www.linkedin.com/in/ahmer-ali-1a3226316" target="_blank" class="btn primary">Visit My LinkedIn Profile</a>
+            <!-- Client Showcase -->
+            <div class="clients-section">
+                <h3>Trusted By</h3>
+                <div class="clients-grid">
+                    <div class="client-item">
+                        <div class="client-card">
+                            <div class="client-logo">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h4>Tech Innovators Inc.</h4>
+                            <p>Enterprise Solutions</p>
+                        </div>
+                    </div>
+                    <div class="client-item">
+                        <div class="client-card">
+                            <div class="client-logo">
+                                <i class="fas fa-hospital"></i>
+                            </div>
+                            <h4>HealthCare Plus</h4>
+                            <p>Healthcare Solutions</p>
+                        </div>
+                    </div>
+                    <div class="client-item">
+                        <div class="client-card">
+                            <div class="client-logo">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h4>E-Commerce Pro</h4>
+                            <p>Retail Solutions</p>
+                        </div>
+                    </div>
+                    <div class="client-item">
+                        <div class="client-card">
+                            <div class="client-logo">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4>EduTech Solutions</h4>
+                            <p>Education Technology</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -634,34 +541,56 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title" data-aos="fade-up">Get in Touch</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Let's discuss your next project</p>
+
             <div class="contact-content">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p><a href="mailto:ahmercreations@gmail.com">ahmercreations@gmail.com</a></p>
+                <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Me</h3>
+                        <p>ahmerali@gmail.com</p>
+                        <a href="mailto:ahmerali@gmail.com" class="btn secondary">Send Email</a>
                     </div>
-                    <div class="info-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <p><a href="https://wa.me/923185367721" target="_blank">+92 318 5367721</a></p>
+                    
+                    <div class="contact-card" data-aos="fade-right" data-aos-delay="300">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>+92 318 5367721</p>
+                        <a href="https://wa.me/923185367721" target="_blank" class="btn secondary">Message Me</a>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-location-dot"></i>
-                        <p>Pakistan</p>
+                    
+                    <div class="contact-card" data-aos="fade-right" data-aos-delay="400">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <p>Connect Professionally</p>
+                        <a href="https://www.linkedin.com/in/ahmer-ali-1a3226316" target="_blank" class="btn secondary">Connect</a>
                     </div>
                 </div>
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" required placeholder="Your Name">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required placeholder="Your Email">
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" required placeholder="Your Message"></textarea>
-                    </div>
-                    <button type="submit" class="btn primary">Send Message</button>
-                </form>
+
+                <div class="contact-form" data-aos="fade-left" data-aos-delay="300">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
