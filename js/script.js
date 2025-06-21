@@ -366,4 +366,19 @@ document.addEventListener('mousemove', (e) => {
         const y = mouseY * speed;
         shape.style.transform = `translate(${x}px, ${y}px)`;
     });
-}); 
+});
+
+// Skills Animation
+const skillItems = document.querySelectorAll('.skill-item');
+
+const skillsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const progressBar = entry.target.querySelector('.skill-progress');
+            const progress = entry.target.dataset.progress;
+            progressBar.style.width = `${progress}%`;
+        }
+    });
+}, { threshold: 0.5 });
+
+skillItems.forEach(item => skillsObserver.observe(item)); 
